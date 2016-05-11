@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!--
+     For more details about configurations options that may appear in
+     this file, see http://wiki.apache.org/solr/SolrConfigXml.
+-->
+<config>
+  <luceneMatchVersion>5.2.0</luceneMatchVersion>
+  <dataDir>${solr.data.dir:}</dataDir>
+
+  <directoryFactory name="DirectoryFactory"
+                    class="${solr.directoryFactory:solr.NRTCachingDirectoryFactory}">
+  </directoryFactory>
+
+  <codecFactory class="solr.SchemaCodecFactory"/>
+
+  <schemaFactory class="ClassicIndexSchemaFactory"/>
+
+
+  <indexConfig>
+    <lockType>simple</lockType>
+    <unlockOnStartup>true</unlockOnStartup>
+    <infoStream>true</infoStream>
+  </indexConfig>
+
+
+  <!-- JMX
+
+       This example enables JMX if and only if an existing MBeanServer
+       is found, use this if you want to configure JMX through JVM
+       parameters. Remove this to disable exposing Solr configuration
+       and statistics to JMX.
+
+       For more details see http://wiki.apache.org/solr/SolrJmx
+    -->
+  <jmx />
+
+  <updateHandler class="solr.DirectUpdateHandler2">
+
+    <updateLog>
+      <str name="dir">${solr.ulog.dir:}</str>
+      <int name="numVersionBuckets">${solr.ulog.numVersionBuckets:65536}</int>
+    </updateLog>
+
+     <autoCommit>
+       <maxTime>${solr.autoCommit.maxTime:15000}</maxTime>
+       <openSearcher>false</openSearcher>
+     </autoCommit>
+
+     <autoSoftCommit>
+       <maxTime>${solr.autoSoftCommit.maxTime:-1}</maxTime>
+     </autoSoftCommit>
+
+  </updateHandler>
+
+  <query>
+
+    <maxBooleanClauses>1024</maxBooleanClauses>
+
+    <filterCache class="solr.FastLRUCache"
+                 size="512"
+                 initialSize="512"
+                 autowarmCount="0"/>
+
+    <queryResultCache class="solr.LRUCache"
+                     size="512"
+                     initialSize="512"
+                     autowarmCount="0"/>
+
+    <documentCache class="solr.LRUCache"
+                   size="512"
+                   initialSize="512"
+                   autowarmCount="0"/>
+
+    <cache name="perSegFilter"
+      class="solr.search.LRUCache"
+      size="10"
+      initialSize="0"
+      autowarmCount="10"
+      regenerator="solr.NoOpRegenerator" />
+
+    <enableLazyFieldLoading>true</enableLazyFieldLoading>
+    <queryResultWindowSize>20</queryResultWindowSize>
+    <queryResultMaxDocsCached>200</queryResultMaxDocsCached>
+    <useColdSearcher>false</useColdSearcher>
+    <maxWarmingSearchers>2</maxWarmingSearchers>
+  </query>
+
+  <requestDispatcher handleSelect="false" >
+
+    <requestParsers enableRemoteStreaming="true"
+                    multipartUploadLimitInKB="2048000"
+                    formdataUploadLimitInKB="2048"
+                    addHttpRequestToContext="false"/>
+
+    <httpCaching never304="true" />
+
+  </requestDispatcher>
+
+  <requestHandler name="/select" class="solr.SearchHandler" default="true">
+     <lst name="defaults">
+       <str name="defType">edismax</str>
+       <str name="echoParams">explicit</str>
+       <str name="sort">score desc, fonds_sort asc, subfonds_sort asc, series_sort asc, container_number_sort asc, sequence_number_sort asc, title_sort asc</str>
+       <int name="rows">20</int>
+       <str name="q.alt">*:*</str>
+       <str name="mm">6&lt;-1 6&lt;90%</str>
+       <int name="qs">1</int>
+       <int name="ps">0</int>
+       <float name="tie">0.01</float>
+       <bool name="lowercaseOperators">false</bool>
+       <str name="df">title_search</str>
+       <str name="q.op">AND</str>
+
+       <str name="qf">
+         title_unstem_search^1000
+         title_search^500
+
+         title_original_unstem_search^500
+         title_original_search^250
+
+         title_uniform_unstem_search^500
+         title_uniform_search^250
+
+         title_variant_unstem_search^500
+         title_variant_search^250
+
+         alternative_title_unstem_search^500
+         alternative_title_search^250
+
+         contents_summary_unstem_search^500
+         contents_summary_search^250
+
+         contents_table_unstem_search^500
+         contents_table_search^250
+
+         scope_and_content_abstract_search^500
+         scope_and_content_abstract_unstem_search^250
+
+         scope_and_content_narrative_unstem_search^500
+         scope_and_content_narrative_search^250
+
+         associated_person_search^250
+         associated_corporation_search^250
+         subject_person_search^250
+         subject_corporation_search^250
+
+         associated_country_search^250
+         associated_place_search^250
+         subject_country_search^250
+         subject_place_search^250
+         spatial_coverage_country_search^250
+         spatial_coverage_place_search^250
+
+         creator_search^250
+         subject_search^250
+
+         archival_history_unstem_search^150
+         archival_history_search^75
+
+         administrative_history_unstem_search^150
+         administrative_history_search^75
+
+         reference_code^1500
+
+         source_of_acquisition_unstem_search^100
+         source_of_acquisition_search^50
+
+         appraisal_search^50
+         appraisal_unstem_search^25
+
+         language_statement_search^25
+         language_statement_unstem_search^20
+
+         system_of_arrangement_search^15
+         system_of_arrangement_unstem_search^10
+
+         publication_note_unstem_search^10
+         publication_note_search^5
+
+         creation_date_search^2
+         publication_date_search^2
+       </str>
+
+       <str name="pf">
+         title_unstem_search^5000
+         title_search^2500
+
+         title_original_unstem_search^2500
+         title_original_search^1250
+
+         title_uniform_unstem_search^2500
+         title_uniform_search^1250
+
+         title_variant_unstem_search^2500
+         title_variant_search^1250
+
+         alternative_title_unstem_search^2500
+         alternative_title_search^1250
+
+         contents_summary_unstem_search^2500
+         contents_summary_search^1250
+
+         contents_table_unstem_search^2500
+         contents_table_search^1250
+
+         scope_and_content_abstract_search^2500
+         scope_and_content_abstract_unstem_search^1250
+
+         scope_and_content_narrative_unstem_search^2500
+         scope_and_content_narrative_search^1250
+
+         associated_person_search^1250
+         associated_corporation_search^1250
+         subject_person_search^1250
+         subject_corporation_search^1250
+
+         associated_country_search^1250
+         associated_place_search^1250
+         subject_country_search^1250
+         subject_place_search^1250
+         spatial_coverage_country_search^1250
+         spatial_coverage_place_search^1250
+
+         creator_search^1250
+         subject_search^1250
+
+         archival_history_unstem_search^750
+         archival_history_search^375
+
+         administrative_history_unstem_search^750
+         administrative_history_search^375
+
+         reference_code^6500
+
+         source_of_acquisition_unstem_search^500
+         source_of_acquisition_search^250
+
+         appraisal_search^500
+         appraisal_unstem_search^250
+
+         language_statement_search^500
+         language_statement_unstem_search^250
+
+         system_of_arrangement_search^75
+         system_of_arrangement_unstem_search^50
+
+         publication_note_unstem_search^50
+         publication_note_search^25
+
+         creation_date_search^10
+         publication_date_search^10
+       </str>
+
+       <str name="pf3">
+         title_unstem_search^3000
+         title_search^1500
+
+         title_original_unstem_search^1500
+         title_original_search^750
+
+         title_uniform_unstem_search^1500
+         title_uniform_search^750
+
+         title_variant_unstem_search^1500
+         title_variant_search^750
+
+         alternative_title_unstem_search^1500
+         alternative_title_search^750
+
+         contents_summary_unstem_search^1500
+         contents_summary_search^750
+
+         contents_table_unstem_search^1500
+         contents_table_search^750
+
+         scope_and_content_abstract_search^1500
+         scope_and_content_abstract_unstem_search^750
+
+         scope_and_content_narrative_unstem_search^1500
+         scope_and_content_narrative_search^750
+
+         associated_person_search^750
+         associated_corporation_search^750
+         subject_person_search^750
+         subject_corporation_search^750
+
+         associated_country_search^750
+         associated_place_search^750
+         subject_country_search^750
+         subject_place_search^750
+         spatial_coverage_country_search^750
+         spatial_coverage_place_search^750
+
+         creator_search^750
+         subject_search^750
+
+         archival_history_unstem_search^450
+         archival_history_search^225
+
+         administrative_history_unstem_search^450
+         administrative_history_search^225
+
+         reference_code^4500
+
+         source_of_acquisition_unstem_search^300
+         source_of_acquisition_search^150
+
+         appraisal_search^150
+         appraisal_unstem_search^75
+
+         language_statement_search^75
+         language_statement_unstem_search^60
+
+         system_of_arrangement_search^45
+         system_of_arrangement_unstem_search^30
+
+         publication_note_unstem_search^30
+         publication_note_search^15
+
+         creation_date_search^6
+         publication_date_search^6
+       </str>
+
+       <str name="pf2">
+         title_unstem_search^2000
+         title_search^1000
+
+         title_original_unstem_search^1000
+         title_original_search^500
+
+         title_uniform_unstem_search^1000
+         title_uniform_search^500
+
+         title_variant_unstem_search^1000
+         title_variant_search^500
+
+         alternative_title_unstem_search^1000
+         alternative_title_search^500
+
+         contents_summary_unstem_search^1000
+         contents_summary_search^500
+
+         contents_table_unstem_search^1000
+         contents_table_search^500
+
+         scope_and_content_abstract_search^1000
+         scope_and_content_abstract_unstem_search^500
+
+         scope_and_content_narrative_unstem_search^1000
+         scope_and_content_narrative_search^500
+
+         associated_person_search^500
+         associated_corporation_search^500
+         subject_person_search^500
+         subject_corporation_search^500
+
+         associated_country_search^500
+         associated_place_search^500
+         subject_country_search^500
+         subject_place_search^500
+         spatial_coverage_country_search^500
+         spatial_coverage_place_search^500
+
+         creator_search^500
+         subject_search^500
+
+         archival_history_unstem_search^300
+         archival_history_search^150
+
+         administrative_history_unstem_search^300
+         administrative_history_search^150
+
+         reference_code^3000
+
+         source_of_acquisition_unstem_search^200
+         source_of_acquisition_search^100
+
+         appraisal_search^100
+         appraisal_unstem_search^50
+
+         language_statement_search^50
+         language_statement_unstem_search^40
+
+         system_of_arrangement_search^30
+         system_of_arrangement_unstem_search^20
+
+         publication_note_unstem_search^20
+         publication_note_search^10
+
+         creation_date_search^4
+         publication_date_search^4
+       </str>
+
+       <str name="facet">true</str>
+       <str name="facet.mincount">1</str>
+       <str name="facet.limit">10</str>
+    </lst>
+  </requestHandler>
+
+  <!-- for requests to get a single document; use id=666 instead of q=id:666 -->
+  <requestHandler name="/document" class="solr.SearchHandler" >
+    <lst name="defaults">
+      <str name="echoParams">explicit</str>
+      <str name="fl">*</str>
+      <int name="rows">1</int>
+      <str name="q">{!raw f=id v=$id}</str> <!-- use id=666 instead of q=id:666 -->
+    </lst>
+  </requestHandler>
+
+  <requestHandler name="/standard" class="solr.StandardRequestHandler" />
+  <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />
+  <requestHandler name="/update" class="solr.UpdateRequestHandler"  />
+  <requestHandler name="/admin/" class="org.apache.solr.handler.admin.AdminHandlers" />
+
+  <requestHandler name="/analysis/field"
+                  startup="lazy"
+                  class="solr.FieldAnalysisRequestHandler" />
+
+  <requestHandler name="/analysis/document"
+                  class="solr.DocumentAnalysisRequestHandler"
+                  startup="lazy" />
+
+  <!-- Echo the request contents back to the client -->
+  <requestHandler name="/debug/dump" class="solr.DumpRequestHandler" >
+    <lst name="defaults">
+     <str name="echoParams">explicit</str>
+     <str name="echoHandler">true</str>
+    </lst>
+  </requestHandler>
+
+  <!-- used to get consecutive terms for browsing -->
+  <searchComponent name="termsComp" class="solr.TermsComponent"/>
+  <requestHandler name="/alphaTerms" class="solr.SearchHandler">
+    <lst name="defaults">
+      <str name="echoParams">explicit</str>
+      <str name="terms">true</str>
+      <str name="terms.sort">index</str>
+      <str name="terms.lower.incl">true</str>
+    </lst>
+    <arr name="components">
+      <str>termsComp</str>
+    </arr>
+  </requestHandler>
+
+  <requestHandler name="/export" class="solr.SearchHandler">
+    <lst name="invariants">
+      <str name="rq">{!xport}</str>
+      <str name="wt">xsort</str>
+      <str name="distrib">false</str>
+    </lst>
+    <arr name="components">
+      <str>query</str>
+    </arr>
+  </requestHandler>
+
+  <!-- Legacy config for the admin interface -->
+  <admin>
+    <defaultQuery>*:*</defaultQuery>
+  </admin>
+
+</config>
