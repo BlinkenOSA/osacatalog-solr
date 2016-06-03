@@ -131,6 +131,9 @@
        <str name="qf">
          title_unstem_search^1000
          title_search^500
+         title_search_hu^500
+         title_search_ru^500
+         title_search_pl^500
 
          title_original_unstem_search^500
          title_original_search^250
@@ -146,9 +149,15 @@
 
          contents_summary_unstem_search^500
          contents_summary_search^250
+         contents_summary_search_hu^250
+         contents_summary_search_ru^250
+         contents_summary_search_pl^250
 
          contents_table_unstem_search^500
          contents_table_search^250
+         contents_table_search_hu^250
+         contents_table_search_ru^250
+         contents_table_search_pl^250
 
          scope_and_content_abstract_search^500
          scope_and_content_abstract_unstem_search^250
@@ -201,6 +210,9 @@
        <str name="pf">
          title_unstem_search^5000
          title_search^2500
+         title_search_hu^2500
+         title_search_ru^2500
+         title_search_pl^2500
 
          title_original_unstem_search^2500
          title_original_search^1250
@@ -216,9 +228,15 @@
 
          contents_summary_unstem_search^2500
          contents_summary_search^1250
+         contents_summary_search_hu^1250
+         contents_summary_search_ru^1250
+         contents_summary_search_pl^1250
 
          contents_table_unstem_search^2500
          contents_table_search^1250
+         contents_table_search_hu^1250
+         contents_table_search_ru^1250
+         contents_table_search_pl^1250
 
          scope_and_content_abstract_search^2500
          scope_and_content_abstract_unstem_search^1250
@@ -271,6 +289,9 @@
        <str name="pf3">
          title_unstem_search^3000
          title_search^1500
+         title_search_hu^1500
+         title_search_ru^1500
+         title_search_pl^1500
 
          title_original_unstem_search^1500
          title_original_search^750
@@ -286,9 +307,15 @@
 
          contents_summary_unstem_search^1500
          contents_summary_search^750
+         contents_summary_search_hu^750
+         contents_summary_search_ru^750
+         contents_summary_search_pl^750
 
          contents_table_unstem_search^1500
          contents_table_search^750
+         contents_table_search_hu^750
+         contents_table_search_ru^750
+         contents_table_search_pl^750
 
          scope_and_content_abstract_search^1500
          scope_and_content_abstract_unstem_search^750
@@ -341,6 +368,9 @@
        <str name="pf2">
          title_unstem_search^2000
          title_search^1000
+         title_search_hu^1000
+         title_search_ru^1000
+         title_search_pl^1000
 
          title_original_unstem_search^1000
          title_original_search^500
@@ -356,9 +386,15 @@
 
          contents_summary_unstem_search^1000
          contents_summary_search^500
+         contents_summary_search_hu^500
+         contents_summary_search_ru^500
+         contents_summary_search_pl^500
 
          contents_table_unstem_search^1000
          contents_table_search^500
+         contents_table_search_hu^500
+         contents_table_search_ru^500
+         contents_table_search_pl^500
 
          scope_and_content_abstract_search^1000
          scope_and_content_abstract_unstem_search^500

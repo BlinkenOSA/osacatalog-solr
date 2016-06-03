@@ -64,74 +64,82 @@
 
      <!-- Search fields -->
      <field name="title_search" type="text_en" indexed="true" stored="false" />
-     <field name="title_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="title_unstem_search" type="text_general" indexed="true" stored="false" />
+
+     <field name="title_search_hu" type="text_hu" indexed="true" stored="false" />
+     <field name="title_search_ru" type="text_ru" indexed="true" stored="false" />
+     <field name="title_search_pl" type="text_pl" indexed="true" stored="false" />
 
      <field name="title_original_search" type="text_general" indexed="true" stored="false" />
-     <field name="title_original_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="title_original_unstem_search" type="text_general" indexed="true" stored="false" />
 
      <field name="creation_date_search" type="date" indexed="true" stored="true" />
      <field name="publication_date_search" type="date" indexed="true" stored="true" />
 
      <field name="archival_history_search" type="text_en" indexed="true" stored="false" />
-     <field name="archival_history_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="archival_history_unstem_search" type="text_general" indexed="true" stored="false" />
 
      <field name="publication_note_search" type="text_en" indexed="true" stored="false" />
-     <field name="publication_note_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="publication_note_unstem_search" type="text_general" indexed="true" stored="false" />
 
      <field name="creator_search" type="text_general" indexed="true" stored="false" multiValued="true"/>
-     <field name="creator_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true"/>
+     <field name="creator_unstem_search" type="text_general" indexed="true" stored="false" multiValued="true"/>
 
      <field name="title_uniform_search" type="text_en" indexed="true" stored="false" multiValued="true" />
-     <field name="title_uniform_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
+     <field name="title_uniform_unstem_search" type="text_general" indexed="true" stored="false" multiValued="true" />
 
      <field name="title_variant_search" type="text_en" indexed="true" stored="false" multiValued="true" />
-     <field name="title_variant_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
+     <field name="title_variant_unstem_search" type="text_general" indexed="true" stored="false" multiValued="true" />
 
      <field name="administrative_history_search" type="text_en" indexed="true" stored="false" />
-     <field name="administrative_history_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="administrative_history_unstem_search" type="text_general" indexed="true" stored="false" />
 
      <field name="source_of_acquisition_search" type="text_en" indexed="true" stored="false" />
-     <field name="source_of_acquisition_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="source_of_acquisition_unstem_search" type="text_general" indexed="true" stored="false" />
 
      <field name="scope_and_content_abstract_search" type="text_en" indexed="true" stored="false" />
-     <field name="scope_and_content_abstract_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="scope_and_content_abstract_unstem_search" type="text_general" indexed="true" stored="false" />
 
      <field name="scope_and_content_narrative_search" type="text_en" indexed="true" stored="false" />
-     <field name="scope_and_content_narrative_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="scope_and_content_narrative_unstem_search" type="text_general" indexed="true" stored="false" />
 
      <field name="appraisal_search" type="text_en" indexed="true" stored="false" />
-     <field name="appraisal_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="appraisal_unstem_search" type="text_general" indexed="true" stored="false" />
 
      <field name="system_of_arrangement_search" type="text_en" indexed="true" stored="false" />
-     <field name="system_of_arrangement_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="system_of_arrangement_unstem_search" type="text_general" indexed="true" stored="false" />
 
      <field name="alternative_title_search" type="text_en" indexed="true" stored="false" />
-     <field name="alternative_title_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="alternative_title_unstem_search" type="text_general" indexed="true" stored="false" />
 
      <field name="language_statement_search" type="text_en" indexed="true" stored="false" />
-     <field name="language_statement_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="language_statement_unstem_search" type="text_general" indexed="true" stored="false" />
 
      <field name="contents_summary_search" type="text_en" indexed="true" stored="false" multiValued="true" />
-     <field name="contents_summary_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
+     <field name="contents_summary_unstem_search" type="text_general" indexed="true" stored="false" multiValued="true" />
+     <field name="contents_summary_search_hu" type="text_hu" indexed="true" stored="false" multiValued="true" />
+     <field name="contents_summary_search_ru" type="text_ru" indexed="true" stored="false" multiValued="true" />
+     <field name="contents_summary_search_pl" type="text_pl" indexed="true" stored="false" multiValued="true" />
 
      <field name="contents_table_search" type="text_en" indexed="true" stored="false" />
-     <field name="contents_table_unstem_search" type="textNoStem" indexed="true" stored="false" />
+     <field name="contents_table_unstem_search" type="text_general" indexed="true" stored="false" />
+     <field name="contents_table_search_hu" type="text_hu" indexed="true" stored="false" />
+     <field name="contents_table_search_ru" type="text_ru" indexed="true" stored="false" />
+     <field name="contents_table_search_pl" type="text_pl" indexed="true" stored="false" />
 
-     <field name="associated_country_search" type="text_general" indexed="true" stored="false" multiValued="true" />
-     <field name="associated_country_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
+     <field name="associated_country_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="associated_place_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="subject_country_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="subject_place_search" type="name_general" indexed="true" stored="false" multiValued="true" />
 
-     <field name="associated_place_search" type="text_general" indexed="true" stored="false" multiValued="true" />
-     <field name="associated_place_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
+     <field name="associated_person_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="associated_corporation_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="subject_person_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="subject_corporation_search" type="name_general" indexed="true" stored="false" multiValued="true" />
 
-     <field name="subject_country_search" type="text_general" indexed="true" stored="false" multiValued="true" />
-     <field name="subject_place_search" type="text_general" indexed="true" stored="false" multiValued="true" />
-     <field name="associated_person_search" type="text_general" indexed="true" stored="false" multiValued="true" />
-     <field name="associated_corporation_search" type="text_general" indexed="true" stored="false" multiValued="true" />
-     <field name="subject_person_search" type="text_general" indexed="true" stored="false" multiValued="true" />
-     <field name="subject_corporation_search" type="text_general" indexed="true" stored="false" multiValued="true" />
      <field name="subject_search" type="text_general" indexed="true" stored="false" multiValued="true" />
-     <field name="spatial_coverage_country_search" type="text_general" indexed="true" stored="false" multiValued="true" />
-     <field name="spatial_coverage_place_search" type="text_general" indexed="true" stored="false" multiValued="true" />
+     <field name="spatial_coverage_country_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="spatial_coverage_place_search" type="name_general" indexed="true" stored="false" multiValued="true" />
 
      <!-- Facet fields -->
      <field name="record_origin_facet" type="string" indexed="true" stored="false" />
@@ -246,7 +254,7 @@
       <fieldType name="binary" class="solr.BinaryField"/>
       <fieldType name="random" class="solr.RandomSortField" indexed="true" />
 
-      <!-- Text - Names, Countries, Places -->
+      <!-- Analyzed Text, no Stemming -->
       <fieldtype name="text_general" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
         <analyzer>
           <tokenizer class="solr.WhitespaceTokenizerFactory" />
@@ -254,7 +262,16 @@
           <filter class="solr.WordDelimiterFilterFactory"
             splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
             splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
-            catenateAll="0" preserveOriginal="0" stemEnglishPossessive="1" />
+            catenateAll="0" preserveOriginal="0" stemEnglishPossessive="0" />
+          <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+        </analyzer>
+      </fieldtype>
+
+      <fieldtype name="name_general" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
+        <analyzer>
+          <tokenizer class="solr.StandardTokenizerFactory"/>
+          <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+          <filter class="solr.BeiderMorseFilterFactory" nameType="GENERIC" ruleType="APPROX" concat="true" languageSet="auto" />
           <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
         </analyzer>
       </fieldtype>
@@ -264,7 +281,7 @@
         <analyzer>
           <tokenizer class="solr.WhitespaceTokenizerFactory" />
           <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
-          <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
+          <filter class="solr.StopFilterFactory" words="stopwords_en.txt"/>
           <filter class="solr.WordDelimiterFilterFactory"
             splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
             splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
@@ -279,12 +296,12 @@
         <analyzer>
           <tokenizer class="solr.WhitespaceTokenizerFactory" />
           <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
-          <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
+          <filter class="solr.StopFilterFactory" words="stopwords_ru.txt"/>
           <filter class="solr.WordDelimiterFilterFactory"
             splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
             splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
             catenateAll="0" preserveOriginal="0" stemEnglishPossessive="1" />
-          <filter class="solr.SnowballPorterFilterFactory" language="Russian" />
+          <filter class="solr.RussianLightStemFilterFactory"/>
           <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
         </analyzer>
       </fieldtype>
@@ -294,7 +311,7 @@
         <analyzer>
           <tokenizer class="solr.WhitespaceTokenizerFactory" />
           <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
-          <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
+          <filter class="solr.StopFilterFactory" words="stopwords_hu.txt"/>
           <filter class="solr.WordDelimiterFilterFactory"
             splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
             splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
@@ -304,32 +321,18 @@
         </analyzer>
       </fieldtype>
 
-      <!-- Analyzed Text, no Stemming -->
-      <fieldtype name="textNoStem" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
+      <!-- Analyzed Text, Hungarian -->
+      <fieldtype name="text_pl" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
         <analyzer>
           <tokenizer class="solr.WhitespaceTokenizerFactory" />
           <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
-          <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
-          <filter class="solr.WordDelimiterFilterFactory"
-            splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
-            splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
-            catenateAll="0" preserveOriginal="0" stemEnglishPossessive="0" />
-        </analyzer>
-      </fieldtype>
-
-      <!-- Left and Right Anchored Analyzed Text, no Stemming -->
-      <fieldtype name="text_anchored" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
-        <analyzer>
-          <!-- put beginning and ending anchors on field value, removing trailing chars -->
-          <!-- watch out for query time whitespace separated chars that will be processed as their own token stream, e.g. in 'felines : warm and fuzzy' -->
-          <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="^\s*(.*[\S&amp;&amp;[^\.\,:;/=&lt;&gt;\(\)\[\]\&amp;\|]])[\s\.\,:;/=&lt;&gt;\(\)\[\]\&amp;\|]*$" replacement="aaaaaa$1zzzzzz"/>
-          <tokenizer class="solr.WhitespaceTokenizerFactory" />
-          <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
-          <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
+          <filter class="solr.StopFilterFactory" words="stopwords_pl.txt"/>
           <filter class="solr.WordDelimiterFilterFactory"
             splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
             splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
             catenateAll="0" preserveOriginal="0" stemEnglishPossessive="1" />
+          <filter class="solr.StempelPolishStemFilterFactory"/>
+          <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
         </analyzer>
       </fieldtype>
 
