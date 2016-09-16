@@ -159,11 +159,13 @@
          contents_table_search_ru^250
          contents_table_search_pl^250
 
-         scope_and_content_abstract_search^500
-         scope_and_content_abstract_unstem_search^250
+         scope_and_content_abstract_unstem_search^500
+         scope_and_content_abstract_search^250
+         scope_and_content_abstract_search_hu^250
 
          scope_and_content_narrative_unstem_search^500
          scope_and_content_narrative_search^250
+         scope_and_content_narrative_search_hu^250
 
          associated_person_search^250
          associated_corporation_search^250
@@ -182,9 +184,11 @@
 
          archival_history_unstem_search^150
          archival_history_search^75
+         archival_history_search_hu^75
 
          administrative_history_unstem_search^150
          administrative_history_search^75
+         administrative_history_search_hu^75
 
          reference_code^1500
 
@@ -202,6 +206,9 @@
 
          publication_note_unstem_search^10
          publication_note_search^5
+         publication_note_search_hu^5
+         publication_note_search_ru^5
+         publication_note_search_pl^5
 
          creation_date_search^2
          publication_date_search^2
@@ -238,11 +245,13 @@
          contents_table_search_ru^1250
          contents_table_search_pl^1250
 
-         scope_and_content_abstract_search^2500
-         scope_and_content_abstract_unstem_search^1250
+         scope_and_content_abstract_unstem_search^2500
+         scope_and_content_abstract_search^1250
+         scope_and_content_abstract_search_hu^1250
 
          scope_and_content_narrative_unstem_search^2500
          scope_and_content_narrative_search^1250
+         scope_and_content_narrative_search_hu^1250
 
          associated_person_search^1250
          associated_corporation_search^1250
@@ -261,9 +270,11 @@
 
          archival_history_unstem_search^750
          archival_history_search^375
+         archival_history_search_hu^375
 
          administrative_history_unstem_search^750
          administrative_history_search^375
+         administrative_history_search_hu^375
 
          reference_code^6500
 
@@ -281,6 +292,9 @@
 
          publication_note_unstem_search^50
          publication_note_search^25
+         publication_note_search_hu^25
+         publication_note_search_ru^25
+         publication_note_search_pl^25
 
          creation_date_search^10
          publication_date_search^10
@@ -317,11 +331,13 @@
          contents_table_search_ru^750
          contents_table_search_pl^750
 
-         scope_and_content_abstract_search^1500
-         scope_and_content_abstract_unstem_search^750
+         scope_and_content_abstract_unstem_search^1500
+         scope_and_content_abstract_search^750
+         scope_and_content_abstract_search_hu^750
 
          scope_and_content_narrative_unstem_search^1500
          scope_and_content_narrative_search^750
+         scope_and_content_narrative_search_hu^750
 
          associated_person_search^750
          associated_corporation_search^750
@@ -340,9 +356,11 @@
 
          archival_history_unstem_search^450
          archival_history_search^225
+         archival_history_search_hu^225
 
          administrative_history_unstem_search^450
          administrative_history_search^225
+         administrative_history_search_hu^225
 
          reference_code^4500
 
@@ -360,6 +378,9 @@
 
          publication_note_unstem_search^30
          publication_note_search^15
+         publication_note_search_hu^15
+         publication_note_search_ru^15
+         publication_note_search_pl^15
 
          creation_date_search^6
          publication_date_search^6
@@ -396,11 +417,13 @@
          contents_table_search_ru^500
          contents_table_search_pl^500
 
-         scope_and_content_abstract_search^1000
-         scope_and_content_abstract_unstem_search^500
+         scope_and_content_abstract_unstem_search^1000
+         scope_and_content_abstract_search^500
+         scope_and_content_abstract_search_hu^500
 
          scope_and_content_narrative_unstem_search^1000
          scope_and_content_narrative_search^500
+         scope_and_content_narrative_search_hu^500
 
          associated_person_search^500
          associated_corporation_search^500
@@ -419,9 +442,11 @@
 
          archival_history_unstem_search^300
          archival_history_search^150
+         archival_history_search_hu^150
 
          administrative_history_unstem_search^300
          administrative_history_search^150
+         administrative_history_search_hu^150
 
          reference_code^3000
 
@@ -439,6 +464,9 @@
 
          publication_note_unstem_search^20
          publication_note_search^10
+         publication_note_search_hu^10
+         publication_note_search_ru^10
+         publication_note_search_pl^10
 
          creation_date_search^4
          publication_date_search^4
