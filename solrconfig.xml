@@ -210,8 +210,8 @@
          publication_note_search_ru^5
          publication_note_search_pl^5
 
-         creation_date_search^2
-         publication_date_search^2
+         date_created_search^2
+         date_publication_search^2
        </str>
 
        <str name="pf">
@@ -296,8 +296,8 @@
          publication_note_search_ru^25
          publication_note_search_pl^25
 
-         creation_date_search^10
-         publication_date_search^10
+         date_created_search^10
+         date_publication_search^10
        </str>
 
        <str name="pf3">
@@ -382,8 +382,8 @@
          publication_note_search_ru^15
          publication_note_search_pl^15
 
-         creation_date_search^6
-         publication_date_search^6
+         date_created_search^6
+         date_publication_search^6
        </str>
 
        <str name="pf2">
@@ -468,8 +468,8 @@
          publication_note_search_ru^10
          publication_note_search_pl^10
 
-         creation_date_search^4
-         publication_date_search^4
+         date_created_search^4
+         date_publications_search^4
        </str>
 
        <str name="facet">true</str>

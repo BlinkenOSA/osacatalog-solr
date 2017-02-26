@@ -15,8 +15,7 @@
      <field name="title" type="string" indexed="false" stored="true" />
      <field name="title_original" type="string" indexed="false" stored="true" />
      <field name="reference_code" type="string" indexed="true" stored="true" omitNorms="true" />
-     <field name="date_created" type="int" indexed="false" stored="true" />
-     <field name="creation_date" type="string" indexed="true" stored="true" />
+     <field name="date_created" type="string" indexed="false" stored="true" />
      <field name="creator" type="string" indexed="false" stored="true" multiValued="true"/>
 
      <field name="container_type" type="string" indexed="false" stored="true" />
@@ -72,8 +71,8 @@
      <field name="title_original_search" type="text_general" indexed="true" stored="false" />
      <field name="title_original_unstem_search" type="text_general" indexed="true" stored="false" />
 
-     <field name="creation_date_search" type="date" indexed="true" stored="true" />
-     <field name="publication_date_search" type="date" indexed="true" stored="true" />
+     <field name="date_created_search" type="int" indexed="true" stored="false" multiValued="true"/>
+     <field name="date_publication_search" type="date" indexed="true" stored="false" />
 
      <field name="archival_history_search" type="text_en" indexed="true" stored="false" />
      <field name="archival_history_unstem_search" type="text_general" indexed="true" stored="false" />
@@ -163,7 +162,7 @@
      <field name="subject_corporation_facet" type="string" indexed="true" stored="false" multiValued="true"/>
      <field name="subject_geo_facet" type="string" indexed="true" stored="false" multiValued="true"/>
      <field name="subject_facet" type="string" indexed="true" stored="false" multiValued="true"/>
-     <field name="date_created_facet" type="int" indexed="true" stored="false" multiValued="false" />
+     <field name="date_created_facet" type="int" indexed="true" stored="false" multiValued="true" />
      <field name="archival_unit_theme_facet" type="string" indexed="true" stored="false" multiValued="true"/>
 
      <!-- Browse Lists -->
