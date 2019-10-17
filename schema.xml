@@ -61,7 +61,7 @@
      <field name="sequence_number_esort" type="int" indexed="true" stored="false" docValues="true"/>
 
      <!-- Reference number -->
-     <field name="archival_reference_number" type="string" indexed="true" stored="false" multiValued="true"/>
+     <field name="archival_reference_number" type="archivalReferenceNumberSearch" indexed="true" stored="false" multiValued="true"/>
      
      <!-- Call number fields -->
      <field name="call_number" type="string" indexed="false" stored="true" multiValued="true"/>
@@ -372,7 +372,7 @@
         </analyzer>
       </fieldtype>
 
-      <!-- Analyzed Text, Hungarian -->
+      <!-- Analyzed Text, Polish -->
       <fieldtype name="text_pl" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
         <analyzer>
           <tokenizer class="solr.WhitespaceTokenizerFactory" />
@@ -395,6 +395,16 @@
           <filter class="solr.ICUFoldingFilterFactory"/>
           <filter class="solr.TrimFilterFactory" />
           <filter class="solr.PatternReplaceFilterFactory" pattern="([^a-z0-9])" replacement="" replace="all" />
+        </analyzer>
+      </fieldtype>
+
+      <fieldtype name="archivalReferenceNumberSearch" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+        <analyzer>
+          <tokenizer class="solr.KeywordTokenizerFactory"/>
+          <filter class="solr.LowerCaseFilterFactory"/>
+          <filter class="solr.PatternReplaceFilterFactory" pattern="(hu osa|fl|record)" replacement="" replace="all" />
+          <filter class="solr.PatternReplaceFilterFactory" pattern="(:|-|/)" replacement="|" replace="all" />
+          <filter class="solr.TrimFilterFactory" />
         </analyzer>
       </fieldtype>
     </types>
